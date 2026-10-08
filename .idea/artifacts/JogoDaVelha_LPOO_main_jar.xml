@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="JogoDaVelha_LPOO-main:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/JogoDaVelha_LPOO_main_jar</output-path>
+    <root id="archive" name="JogoDaVelha_LPOO-main.jar">
+      <element id="module-output" name="JogoDaVelha_LPOO-main" />
+    </root>
+  </artifact>
+</component>
