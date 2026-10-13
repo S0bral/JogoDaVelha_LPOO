@@ -1,33 +1,29 @@
-# ❌⭕ Jogo da Velha em Java (CLI)
+# ❌⭕ Jogo da Velha (LPOO) - Terminal Edition
 
-Um jogo da velha clássico desenvolvido em Java para execução direta no terminal, criado para a disciplina de Linguagem de Programação Orientada a Objetos (LPOO).
+Um jogo da velha clássico desenvolvido em Java para execução direta no terminal (CLI - Command Line Interface), criado para a disciplina de Linguagem de Programação Orientada a Objetos (LPOO).
 
-O projeto conta com interface em linha de comando otimizada com atualização dinâmica de tela (ANSI Escape Codes) e atalho de execução para Windows.
+O projeto conta com interface em linha de comando otimizada com atualização dinâmica de ecrã (usando sequências de escape ANSI), validação completa de jogadas e detecção automática de vitória/empate.
 
 ---
 
-## 🎮 Como Jogar (Download da Release)
+## 🎮 Como Jogar (Transferência da Release Pronta)
 
-Você não precisa ter o IntelliJ instalado para jogar, apenas o jdk na versão 27.0 instalado. A forma mais simples é baixar o executável pronto:
+Para quem deseja apenas jogar e testar o projeto, não é necessário configurar o IntelliJ ou compilar o código.
 
-1. Acesse a seção de **[Releases](../../releases)** na barra lateral direita deste repositório.
-2. Na versão mais recente (ex: `v1.0.0`), baixe os arquivos:
-   * `JogoDaVelha_LPOO-main.jar`
-   * `Jogar.bat`
-3. Coloque ambos os arquivos na **mesma pasta**.
+Siga estes passos simples:
+
+1. Aceda à secção de **[Releases](../../releases)** na barra lateral direita deste repositório.
+2. Na versão mais recente (ex: `v1.0.0`), transfira os ficheiros:
+   * `JogoDaVelha_LPOO-main.jar` (O executável do jogo)
+   * `Jogar.bat` (O atalho de inicialização para Windows)
+3. Coloque ambos os ficheiros na **mesma pasta** no seu computador.
 4. Dê um **duplo clique em `Jogar.bat`** para iniciar a partida imediatamente.
 
 ---
 
-## 🖥️ Execução Manual via Terminal
+## 📐 Diagrama de Classes UML
 
-Caso prefira rodar o jogo diretamente pelo PowerShell ou Prompt de Comando (CMD):
-
-```cmd
-java -jar JogoDaVelha_LPOO-main.jar
-```
-
-## 📐 Diagrama de Classes (UML)
+O projeto foi estruturado com base em princípios de POO. Abaixo está o diagrama de classes detalhado, mostrando as principais classes, os seus métodos e como se relacionam.
 
 ```mermaid
 classDiagram
@@ -35,13 +31,19 @@ classDiagram
         + main(args: String[]) void
     }
 
+    class GameMaster {
+        + iniciarAplicacao() void
+        - configurarJogadores() void
+        - exibirMenu() void
+    }
+
     class JogoDaVelha {
         - tabuleiro: Tabuleiro
         - jogador1: Jogador
         - jogador2: Jogador
         - jogadorAtual: Jogador
-        + JogoDaVelha()
-        + iniciar() void
+        + JogoDaVelha(j1: Jogador, j2: Jogador)
+        + iniciarPartida() void
         - alternarJogador() void
         - verificarFimDeJogo() boolean
     }
@@ -65,7 +67,8 @@ classDiagram
         + getSimbolo() char
     }
 
-    Main --> JogoDaVelha : cria e executa
+    Main --> GameMaster : executa
+    GameMaster --> JogoDaVelha : controla fluxo
+    GameMaster "1" *-- "2" Jogador : instancia
     JogoDaVelha "1" *-- "1" Tabuleiro : contém
-    JogoDaVelha "1" *-- "2" Jogador : gerencia
-```
+    JogoDaVelha "1" o-- "2" Jogador : gere turnos
