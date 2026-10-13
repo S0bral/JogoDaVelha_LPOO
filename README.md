@@ -2,30 +2,32 @@
 
 Um jogo da velha clássico desenvolvido em Java para execução direta no terminal (CLI - Command Line Interface), criado para a disciplina de Linguagem de Programação Orientada a Objetos (LPOO).
 
-O projeto conta com interface em linha de comando otimizada com atualização dinâmica de ecrã (usando sequências de escape ANSI), validação completa de jogadas e detecção automática de vitória/empate.
+O projeto conta com interface em linha de comando otimizada com atualização dinâmica de tela (usando sequências de escape ANSI), validação completa de jogadas, atalho de execução para Windows e controle centralizado do fluxo de partidas via `GameMaster`.
 
 ---
 
 ## 🎮 Como Jogar (Transferência da Release Pronta)
 
-Para quem deseja apenas jogar e testar o projeto, não é necessário configurar o IntelliJ ou compilar o código.
+Para quem deseja apenas jogar e testar o projeto, não é necessário ter uma IDE instalada nem compilar o código.
 
 Siga estes passos simples:
 
-1. Aceda à secção de **[Releases](../../releases)** na barra lateral direita deste repositório.
-2. Na versão mais recente (ex: `v1.0.0`), transfira os ficheiros:
+1. Acesse a seção de **[Releases](../../releases)** na barra lateral direita deste repositório.
+2. Na versão mais recente (ex: `v1.0.0`), baixe os arquivos:
    * `JogoDaVelha_LPOO-main.jar` (O executável do jogo)
    * `Jogar.bat` (O atalho de inicialização para Windows)
-3. Coloque ambos os ficheiros na **mesma pasta** no seu computador.
+3. Coloque ambos os arquivos na **mesma pasta** no seu computador.
 4. Dê um **duplo clique em `Jogar.bat`** para iniciar a partida imediatamente.
 
 ---
 
-## 📐 Diagrama de Classes UML
+## 🖥️ Execução Manual via Terminal
 
-O projeto foi estruturado com base em princípios de POO. Abaixo está o diagrama de classes detalhado, mostrando as principais classes, os seus métodos e como se relacionam.
+Caso prefira rodar o jogo diretamente pelo Prompt de Comando (CMD), PowerShell ou Terminal Linux/macOS:
 
-```mermaid
+```cmd
+java -jar JogoDaVelha_LPOO-main.jar
+```
 classDiagram
     class Main {
         + main(args: String[]) void
