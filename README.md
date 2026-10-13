@@ -27,7 +27,7 @@ Caso prefira rodar o jogo diretamente pelo Prompt de Comando (CMD), PowerShell o
 
 ```cmd
 java -jar JogoDaVelha_LPOO-main.jar
-```
+
 classDiagram
     class Main {
         + main(args: String[]) void
