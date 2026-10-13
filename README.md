@@ -25,3 +25,46 @@ Caso prefira rodar o jogo diretamente pelo PowerShell ou Prompt de Comando (CMD)
 
 ```cmd
 java -jar JogoDaVelha_LPOO-main.jar
+
+## 📐 Diagrama de Classes (UML)
+
+```mermaid
+classDiagram
+    class Main {
+        + main(args: String[]) void
+    }
+
+    class JogoDaVelha {
+        - tabuleiro: Tabuleiro
+        - jogador1: Jogador
+        - jogador2: Jogador
+        - jogadorAtual: Jogador
+        + JogoDaVelha()
+        + iniciar() void
+        - alternarJogador() void
+        - verificarFimDeJogo() boolean
+    }
+
+    class Tabuleiro {
+        - matriz: char[][]
+        + Tabuleiro()
+        + exibir() void
+        + fazerJogada(linha: int, coluna: int, simbolo: char) boolean
+        + ePosicaoVazia(linha: int, coluna: int) boolean
+        + verificarVitoria() boolean
+        + eEmpate() boolean
+        + limparTela() void
+    }
+
+    class Jogador {
+        - nome: String
+        - simbolo: char
+        + Jogador(nome: String, simbolo: char)
+        + getNome() String
+        + getSimbolo() char
+    }
+
+    Main --> JogoDaVelha : cria e executa
+    JogoDaVelha "1" *-- "1" Tabuleiro : contém
+    JogoDaVelha "1" *-- "2" Jogador : gerencia
+```
