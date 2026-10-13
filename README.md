@@ -25,6 +25,7 @@ Caso prefira rodar o jogo diretamente pelo PowerShell ou Prompt de Comando (CMD)
 
 ```cmd
 java -jar JogoDaVelha_LPOO-main.jar
+```
 
 ## 📐 Diagrama de Classes (UML)
 
