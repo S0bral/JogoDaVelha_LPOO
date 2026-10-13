@@ -8,7 +8,7 @@ O projeto conta com interface em linha de comando otimizada com atualização di
 
 ## 🎮 Como Jogar (Download da Release)
 
-Você não precisa ter o IntelliJ instalado para jogar. A forma mais simples é baixar o executável pronto:
+Você não precisa ter o IntelliJ instalado para jogar, apenas o jdk na versão 27.0 instalado. A forma mais simples é baixar o executável pronto:
 
 1. Acesse a seção de **[Releases](../../releases)** na barra lateral direita deste repositório.
 2. Na versão mais recente (ex: `v1.0.0`), baixe os arquivos:
