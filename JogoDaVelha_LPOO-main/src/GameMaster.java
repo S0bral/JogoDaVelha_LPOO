@@ -44,11 +44,13 @@ public class GameMaster {
             if (jogadaValida){
 
                 if(tabuleiro1.condicaoVitoria(jogadorAtual.getSimbolo())){
+                    tabuleiro1.limparTelaSimples();
                     tabuleiro1.imprimirTabuleiro();
                     System.out.println("Parabens o jogador " + jogadorAtual.getJogador() + " venceu");
                     break;
                 }
                 if(tabuleiro1.verificarEmpate()){
+                    tabuleiro1.limparTelaSimples();
                     tabuleiro1.imprimirTabuleiro();
                     System.out.println("Empate");
                     break;
