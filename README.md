@@ -8,7 +8,7 @@ O projeto conta com interface em linha de comando otimizada com atualização di
 
 ## 🎮 Como Jogar (Transferência da Release Pronta)
 
-Para quem deseja apenas jogar e testar o projeto, não é necessário ter uma IDE instalada nem compilar o código.
+Para quem deseja apenas jogar e testar o projeto, não é necessário ter uma IDE instalada nem compilar o código, apenas jdk instalado na versão 27.0.
 
 Siga estes passos simples:
 
@@ -81,5 +81,3 @@ classDiagram
     JogoDaVelha "1" *-- "1" Tabuleiro : contém
     JogoDaVelha "1" o-- "2" Jogador : gere turnos
 ```
-    JogoDaVelha "1" *-- "1" Tabuleiro : contém
-    JogoDaVelha "1" o-- "2" Jogador : gere turnos
