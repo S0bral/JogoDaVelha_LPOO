@@ -29,6 +29,11 @@ Caso prefira rodar o jogo diretamente pelo Prompt de Comando (CMD), PowerShell o
 java -jar JogoDaVelha_LPOO-main.jar
 ```
 
+## 📐 Diagrama de Classes UML
+
+O projeto foi estruturado com base nos princípios da Programação Orientada a Objetos (POO). Abaixo está o diagrama de classes detalhado, mostrando as principais classes, os seus métodos e como se relacionam:
+
+```mermaid
 classDiagram
     class Main {
         + main(args: String[]) void
@@ -73,5 +78,8 @@ classDiagram
     Main --> GameMaster : executa
     GameMaster --> JogoDaVelha : controla fluxo
     GameMaster "1" *-- "2" Jogador : instancia
+    JogoDaVelha "1" *-- "1" Tabuleiro : contém
+    JogoDaVelha "1" o-- "2" Jogador : gere turnos
+```
     JogoDaVelha "1" *-- "1" Tabuleiro : contém
     JogoDaVelha "1" o-- "2" Jogador : gere turnos
